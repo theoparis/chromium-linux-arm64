@@ -1,0 +1,22 @@
+diff --git a/DEPS b/DEPS
+index 110ad749da..6097a3aed3 100644
+--- a/DEPS
++++ b/DEPS
+@@ -160,6 +160,8 @@ vars = {
+ 
+   'checkout_instrumented_libraries': 'checkout_linux and checkout_configuration != "small"',
+ 
++  'checkout_reclient': False,
++
+   # By default bot checkouts the WPR archive files only when this
+   # flag is set True.
+   'checkout_wpr_archives': False,
+@@ -999,7 +1001,7 @@ deps = {
+         'version': Var('reclient_version'),
+       }
+     ],
+-    'condition': 'non_git_source',
++    'condition': 'checkout_reclient',
+     'dep_type': 'cipd',
+   },
+
